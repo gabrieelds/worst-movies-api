@@ -14,14 +14,17 @@ Este é um projeto baseado em Node.js utilizando o framework NestJS e banco de d
 1. **Clone o repositório:**
   ```bash
    git clone https://github.com/gabrieelds/worst-movies-api.git
+  ```bash
 
 2. **Navegue para o diretório do projeto:**
   ```bash
   cd worst-movies-api
+  ```bash
 
 3. **Instale as dependências:**
   ```bash
   npm i
+  ```bash
 
 ## Execução
 
@@ -30,6 +33,7 @@ Este é um projeto baseado em Node.js utilizando o framework NestJS e banco de d
 1. **Inicie a API:**
   ```bash
   npm run start
+  ```bash
 
 ## Endpoints da API
 
@@ -39,7 +43,7 @@ Este é um projeto baseado em Node.js utilizando o framework NestJS e banco de d
   Método: POST
   Envia um arquivo CSV contendo uma lista de filmes para processamento.
   O arquivo deverá ter seu delimitador ";" contendo o cabeçalho:
-  
+
     year: number
     title: string
     studios: string
