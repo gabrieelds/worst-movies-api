@@ -24,6 +24,45 @@ Essa é uma API que processa arquivos CSV contendo informações sobre os piores
   npm i
   ```
 
+## 🚀 Executando o projeto
+  O servidor será iniciado por padrão na porta 3000.
+
+1. **Inicie a API:**
+  ```
+  npm run start
+  ```
+
+## ✳️ Endpoints
+
+1. **Upload do arquivo CSV**
+
+  Endpoint: /movies
+
+  Método: POST
+
+  Envia um arquivo CSV contendo uma lista de filmes para processamento.
+  O arquivo deverá ter seu delimitador ";" contendo o cabeçalho:
+
+    year: number
+
+    title: string
+
+    studios: string
+
+    producers: string
+
+    winner: yes / null
+
+
+2. **Obter intervalos entre premiações**
+
+  Endpoint: /movies/intervals
+
+  Método: GET
+
+  Retorna os maiores e menores intervalos de premiações dos produtores.
+  
+
 ## ⚙️ Executando os testes
 
   O projeto conta apenas com testes de integração. Para executá-los, rode o comando:
