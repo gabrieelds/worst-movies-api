@@ -61,7 +61,7 @@ Essa é uma API que processa arquivos CSV contendo informações sobre os piores
   Método: GET
 
   Retorna os maiores e menores intervalos de premiações dos produtores.
-  
+
 
 ## ⚙️ Executando os testes
 
@@ -71,8 +71,6 @@ Essa é uma API que processa arquivos CSV contendo informações sobre os piores
   ```
 
 ## 🛠️ Construído com
-
-Mencione as ferramentas que você usou para criar seu projeto
 
 * [Node.js](https://nodejs.org/) - Ambiente utilizado
 * [NestJS](https://nestjs.com/) - Framework utilizado
