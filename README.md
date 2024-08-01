@@ -1,6 +1,6 @@
 # worst-movies-api
 
-Essa é uma API que processa arquivos CSV contendo informações sobre os piores filmes de cada e apresenta os intervalos de premiações dos produtores.
+Essa é uma API que processa arquivos CSV contendo informações sobre os piores filmes de cada ano e apresenta os intervalos de premiações dos produtores.
 
 ### 📋 Pré-requisitos
 
