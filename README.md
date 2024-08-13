@@ -38,11 +38,14 @@ Essa é uma API que processa arquivos CSV contendo informações sobre os piores
 
   Endpoint: /movies
 
+  Entrada: movielist - file
+
   Método: POST
 
-  Envia um arquivo CSV contendo uma lista de filmes para processamento.
+  Envia um arquivo CSV  contendo uma lista de filmes para processamento.
   O arquivo deverá ter seu delimitador ";" contendo o cabeçalho:
 
+    ```
     year: number
 
     title: string
@@ -52,12 +55,13 @@ Essa é uma API que processa arquivos CSV contendo informações sobre os piores
     producers: string
 
     winner: yes / null
+    ```
 
 
 2. **Obter intervalos entre premiações**
 
   Endpoint: /movies/intervals
-
+  
   Método: GET
 
   Retorna os maiores e menores intervalos de premiações dos produtores.
