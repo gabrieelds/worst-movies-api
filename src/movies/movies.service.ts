@@ -1,10 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Movie } from './entities/movie.entity';
-import { QueryFailedError, Repository } from 'typeorm';
-import { Readable } from 'stream';
+import { Repository } from 'typeorm';
 import { finished } from 'stream/promises';
 import * as fastcsv from 'fast-csv';
+import * as fs from 'fs';
+import * as path from 'path';
 
 @Injectable()
 export class MoviesService {
@@ -13,16 +14,13 @@ export class MoviesService {
 		private movieRepository: Repository<Movie>,
 	) { }
 
-	async uploadMovies(file: Express.Multer.File) {
+	private async uploadMovies() {
 		const movies: Movie[] = [];
 
-		const readableStream = new Readable();
-		readableStream._read = () => { };
-
-		readableStream.push(file.buffer);
-		readableStream.push(null);
-
+		const csvPath = path.join(process.cwd(), 'src', 'movies', 'data', 'movielist.csv');
+	
 		try {
+			const readableStream = fs.createReadStream(csvPath)
 			const csvStream = fastcsv.parseStream(readableStream, { headers: true, delimiter: ';' });
 
 			for await (const row of csvStream) {
@@ -45,6 +43,7 @@ export class MoviesService {
 	}
 
 	async getWinnersIntervals() {
+		await this.uploadMovies()
 		const winnersMovies = await this.movieRepository.find({ where: { winner: true }, order: { year: 'ASC' } });
 
 		const winnerProducers = new Map<string, number[]>();
