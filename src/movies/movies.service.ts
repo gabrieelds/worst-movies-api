@@ -15,6 +15,8 @@ export class MoviesService {
 	) { }
 
 	private async uploadMovies() {
+		//garantimos que o banco é limpo antes de inserir os dados
+		await this.movieRepository.clear();
 		const movies: Movie[] = [];
 
 		const csvPath = path.join(process.cwd(), 'src', 'movies', 'data', 'movielist.csv');
